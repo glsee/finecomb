@@ -1,0 +1,10 @@
+.finecomb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  background: -webkit-linear-gradient(#4c66a4, #435e9c);
+  border-bottom: 1px solid #3d4e7e;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15);
+}
