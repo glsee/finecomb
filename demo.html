@@ -7,10 +7,17 @@
 </head>
 <body>
   <div class="finecomb">
-    <input></input>
+    <div class="icon"></div>
   </div>
   <script type="text/javascript">
-
+    $(function() {
+      $(".finecomb").mouseenter(function() {
+        $(".icon").addClass("bounceIn");
+      });
+      $(".finecomb").mouseleave(function() {
+        $(".icon").removeClass("bounceIn");
+      });
+    });
   </script>
 </body>
 <html>
