@@ -1,34 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+  margin: 0;
 }
 
 .finecomb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 42px;
+  position: relative;
+  padding: 5px 5%;
   background: -webkit-linear-gradient(#4c66a4, #435e9c);
   border-bottom: 1px solid #3d4e7e;
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15);
 }
 
   .finecomb-element {
-    float: left;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .icon {
-    margin: 5px 5px 5px 5%;
+    margin-right: 5px;
     width: 32px;
     height: 32px;
     background-image: url('magnifying_glass_32x32.png');
   }
 
   .inputbox {
-    margin: 10px 5px 0 5px;
-    margin-top: 10px;
     border: 0;
-    width: 700px;
+    width: -webkit-calc(100% - 42px);
+    width: calc(100% - 42px);
     height: 22px;
     color: rgb(255, 255, 255);
     background-color: transparent;
@@ -39,7 +41,6 @@ body {
     -webkit-appearance: initial;
     font-size: inherit;
     font-family: inherit;
-    /* background: -webkit-linear-gradient(#4c66a4, #435e9c); */
   }
 
 @-webkit-keyframes bounceIn {
