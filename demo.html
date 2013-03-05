@@ -12,12 +12,15 @@
   </div>
   <script type="text/javascript">
     $(function() {
-      $(".finecomb").mouseenter(function() {
-        $(".icon").addClass("bounceIn");
+      var $finecomb = $('.finecomb'),
+          $icon = $('.icon');
+      
+      $finecomb.mouseenter(function() {
+        $icon.addClass("bounceIn");
+      }).mouseleave(function() {
+        $icon.removeClass("bounceIn");
       });
-      $(".finecomb").mouseleave(function() {
-        $(".icon").removeClass("bounceIn");
-      });
+
       $(".inputbox").focus(function() {
         if($(this).text() === 'Search for things')
           $(this).text('');
