@@ -12,6 +12,11 @@
   </div>
   <script type="text/javascript">
     $(function() {
+      var config = {
+        user_id: '',
+        cse_id: ''
+      };
+      console.log(config);
       var $finecomb = $('.finecomb'),
           $icon = $('.icon');
       
@@ -21,7 +26,7 @@
         $icon.removeClass("bounceIn");
       });
 
-      $(".inputbox").focus(function() {
+      $('.inputbox').focus(function() {
         if($(this).text() === 'Search for things')
           $(this).text('');
       }).blur(function() {
