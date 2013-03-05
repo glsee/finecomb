@@ -1,3 +1,7 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+
 .finecomb {
   position: absolute;
   top: 0;
@@ -9,12 +13,30 @@
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15);
 }
 
+  .finecomb-element {
+    float: left;
+  }
+
   .icon {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 5px 5px 5%;
     width: 32px;
     height: 32px;
     background-image: url('magnifying_glass_32x32.png');
+  }
+
+  .inputbox {
+    margin: 10px 5px 0 5px;
+    margin-top: 10px;
+    border: 0;
+    width: 700px;
+    height: 27px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-border-image: none;
+    -webkit-font-smoothing: antialiased;
+    /* background: -webkit-linear-gradient(#4c66a4, #435e9c); */
   }
 
 @-webkit-keyframes bounceIn {

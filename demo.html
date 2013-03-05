@@ -7,7 +7,8 @@
 </head>
 <body>
   <div class="finecomb">
-    <div class="icon"></div>
+    <div class="icon finecomb-element"></div>
+    <div class="inputbox finecomb-element" contenteditable="true">Search for things</div>
   </div>
   <script type="text/javascript">
     $(function() {
@@ -16,6 +17,13 @@
       });
       $(".finecomb").mouseleave(function() {
         $(".icon").removeClass("bounceIn");
+      });
+      $(".inputbox").focus(function() {
+        if($(this).text() === 'Search for things')
+          $(this).text('');
+      }).blur(function() {
+        if($(this).text() === '')
+          $(this).text('Search for things');
       });
     });
   </script>
