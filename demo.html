@@ -24,6 +24,8 @@
       }).blur(function() {
         if($(this).text() === '')
           $(this).text('Search for things');
+      }).keypress(function(e) { 
+        return e.which != 13; 
       });
     });
   </script>
