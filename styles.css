@@ -36,6 +36,9 @@ body {
     -webkit-background-origin: padding-box;
     -webkit-border-image: none;
     -webkit-font-smoothing: antialiased;
+    -webkit-appearance: initial;
+    font-size: inherit;
+    font-family: inherit;
     /* background: -webkit-linear-gradient(#4c66a4, #435e9c); */
   }
 
