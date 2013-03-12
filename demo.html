@@ -17,6 +17,11 @@
   </div>
   <script type="text/javascript">
     $(function() {
+      var config = {
+        user_id: '',
+        cse_id: ''
+      };
+      console.log(config);
       var $finecomb = $('.finecomb'),
           $icon = $('.icon'),
           placeholderSupported = !!('placeholder' in document.createElement('input') && 'placeholder' in document.createElement('textarea'));

@@ -7,6 +7,13 @@ body {
   margin: 0;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .finecomb {
   position: relative;
   padding: 5px 5%;
