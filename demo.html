@@ -18,7 +18,8 @@
   <script type="text/javascript">
     $(function() {
       var $finecomb = $('.finecomb'),
-          $icon = $('.icon');
+	  $icon = $('.icon'),
+	  placeholderSupported = !!('placeholder' in document.createElement('input') && 'placeholder' in document.createElement('textarea'));
       
       $finecomb.mouseenter(function() {
         $icon.addClass("bounceIn");
@@ -27,10 +28,10 @@
       });
 
       $(".inputbox").focus(function() {
-        if($(this).text() === 'Search for things')
+	if(!placeholderSupported && $(this).text() === 'Search for things')
           $(this).text('');
       }).blur(function() {
-        if($(this).text() === '')
+	if(!placeholderSupported && $(this).text() === '')
           $(this).text('Search for things');
       }).keypress(function(e) { 
         return e.which != 13; 
