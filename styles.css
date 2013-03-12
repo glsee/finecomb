@@ -34,11 +34,15 @@ button:focus {
     background-image: url('magnifying_glass_32x32.png');
   }
 
-  .inputbox {
-    border: 0;
+  .twitter-typeahead {
     width: -webkit-calc(100% - 42px);
     width: calc(100% - 42px);
+  }
+
+  .inputbox {
+    border: 0;
     height: 22px;
+    width: 100%;
     color: rgb(255, 255, 255);
     background-color: transparent;
     -webkit-background-clip: border-box;
@@ -58,20 +62,24 @@ button:focus {
     color: #fff;
   }
 
-  .hints {
+  .tt-dropdown-menu {
     display: none;
     position: absolute;
-    margin-top: 6px;
+    margin-top: 12px;
     width: 100%;
     left: 0;
   }
 
-  .hints-option {
-    padding: 15px 5% 15px -webkit-calc(5% + 52px);
+  .tt-suggestion {
+    padding: 15px 12px;
   }
 
-  .hints-option:hover{
+  .tt-suggestion:hover {
     background: rgb(218, 226, 236);
+  }
+
+  .tt-hint {
+    visibility: hidden;
   }
 
 @-webkit-keyframes bounceIn {

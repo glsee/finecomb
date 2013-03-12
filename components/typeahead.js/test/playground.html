@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../dist/typeahead.css">
+    <script src="vendor/jquery-1.9.1.js"></script>
+    <script src="../dist/typeahead.js"></script>
+
+    <style>
+      .container {
+        width: 800px;
+        margin: 50px auto;
+      }
+
+      .tt-dropdown-menu {
+        background-color: #fff;
+        border: 1px solid #000;
+      }
+
+      .tt-suggestion.tt-is-under-cursor {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <input class="states" type="text" placeholder="states">
+      <br>
+      <br>
+      <input class="bad-tokens" type="text" placeholder="bad tokens">
+      <br>
+      <br>
+      <input class="regex-symbols" type="text" placeholder="regex symbols">
+    </div>
+
+    <script>
+      $('.states').typeahead({
+        local: [
+          "Alabama",
+          "Alaska",
+          "Arizona",
+          "Arkansas",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "Florida",
+          "Georgia",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      });
+
+      $('.bad-tokens').typeahead({
+        local: [
+          {
+            value: 'all bad',
+            tokens: ['  ', ' ', null, undefined, false, 'all', 'bad']
+          },
+          {
+            value: 'whitespace',
+            tokens: ['  ', ' ', '\t', '\n', 'whitespace']
+          },
+          {
+            value: 'undefined',
+            tokens: [undefined, 'undefined']
+          },
+          {
+            value: 'null',
+            tokens: [null, 'null']
+          },
+          {
+            value: 'false',
+            tokens: [false, 'false']
+          }
+        ]
+      });
+
+      $('.regex-symbols').typeahead({
+        local: [
+          '*.js',
+          '[Tt]ypeahead.js',
+          '^typeahead.js$',
+          'typeahead.js(0.8.2)',
+          'typeahead.js(@\\d.\\d.\\d)',
+          'typeahead.js@0.8.2'
+        ]
+      });
+    </script>
+  </body>
+</html>

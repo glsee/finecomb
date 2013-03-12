@@ -2,18 +2,13 @@
 <html>
 <head>
    <title>Finecomb demo</title>
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="styles.css"></link> 
+   <link rel="stylesheet" type="text/css" href="components/typeahead.js/dist/typeahead.min.css"></link> 
+   <link rel="stylesheet" type="text/css" href="styles.css"></link>
 </head>
 <body>
   <div class="finecomb">
     <div class="icon finecomb-element"></div>
     <input type="search" class="inputbox finecomb-element" placeholder="Search for things"/>
-    <div class="hints">
-      <div class="hints-option hints-web">Search for the web</div>
-      <div class="hints-option hints-photos">Search for photos</div>
-      <div class="hints-option hints-location">Search for locations</div>
-    </div>
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script> window.jQuery || document.write('<script src="components/jquery/jquery.min.js">\x3C/script>')</script>
@@ -37,7 +32,12 @@
           $(this).text('Search for things');
       }).keypress(function(e) { 
         return e.which != 13; 
-      });
+      }).typeahead([
+        {
+          name: 'search',
+          local: ['test', 'test2']
+        }
+      ]);
     });
   </script>
 </body>
