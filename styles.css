@@ -43,6 +43,22 @@ body {
     font-family: inherit;
   }
 
+  .hints {
+    display: none;
+    position: absolute;
+    margin-top: 6px;
+    width: 100%;
+    left: 0;
+  }
+
+  .hints-option {
+    padding: 15px 5% 15px -webkit-calc(5% + 52px);
+  }
+
+  .hints-option:hover{
+    background: rgb(218, 226, 236);
+  }
+
 @-webkit-keyframes bounceIn {
   0% {
     opacity: 0;
