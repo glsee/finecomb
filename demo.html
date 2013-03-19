@@ -12,7 +12,7 @@
   </div>
   <div class="result"><ul></ul></div>
   <script> window.jQuery || document.write('<script src="components/jquery/jquery.min.js">\x3C/script>')</script>
-  <script src="components/typeahead.js/dist/typeahead.min.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
   <script type="text/javascript">
     $(function() {
       var GOOGLESUGGESTURL = "http://clients1.google.com/complete/search";
@@ -32,38 +32,27 @@
       }).blur(function() {
         if(!placeholderSupported && $(this).text() === '')
           $(this).text('Search for things');
-      }).keyup(function(e) { 
-        if(e.which == 13) {
-          return false;
-        } else {
-          console.log($(this).val());
-          $.ajax({
+      }).keydown(function(e) { 
+        return e.which != 13;
+      }).typeahead({
+        source: function (query, process) {
+          return $.ajax({
             url: GOOGLESUGGESTURL,
             dataType: 'jsonp',
             data: {
-              q: $(".inputbox").val(),
+              q: query,
               nolabels: 't',
               client: 'psy',
               ds: ''
             },
             success: function(data) {
-              data = $.map(data[1], function(val, idx) {
-                //return "<li>" + val[0] + "</li>";
+              return process($.map(data[1], function(val, idx) {
                 return val[0].replace('<b>', '').replace('</b>', '');
-              });
-              console.log(data);
-              source = data;
-
-              //$(".result ul").html(data);
+              }));
             }
           });
-        }
-      }).typeahead([
-        {
-          name: 'search',
-          local: source
-        }
-      ]);
+          }
+      });
     });
   </script>
 </body>
